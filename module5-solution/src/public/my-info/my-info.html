@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">Account Information</h2>
+  <div ng-if="myInfoCtrl.loggedIn"><br>
+    <div class="col-md-4">
+      First Name: {{myInfoCtrl.memberInfo.firstName}}<br>
+      Last Name: {{myInfoCtrl.memberInfo.lastName}}<br>
+      Email: {{myInfoCtrl.memberInfo.email}}<br>
+      Phone: {{myInfoCtrl.memberInfo.phone}}<br>
+    </div>
+    <span>Your Favorite Menu Item</span>
+    <div ng-show"myInfoCtrl.memberInfo.favorite">
+      <menu-item menu-item="myInfoCtrl.favorite"></menu-item>
+    </div>
+    <div ng-hide="myInfoCtrl.memberInfo.favorite" class="menu-item-tile col-md-6">
+      <p>What? You don't have a favorite menu item?</h3>
+    </div>
+  </div>
+  <div ng-if="!myInfoCtrl.loggedIn">
+    <p>Not Signed Up Yet. <i><a ui-sref="public.signup">Sign up Now!</a></i></p>
+  </div>
+</div>
